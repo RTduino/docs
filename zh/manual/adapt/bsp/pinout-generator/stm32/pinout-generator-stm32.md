@@ -264,13 +264,3 @@ pinout-generator是为了方便用户将BSP对接到[RTduino](https://github.com
 当选择了pwm转spi后，`pins_arduino.c`文件会生成如下代码，根据注释补充完整即可。补充完整请自行删除`#error`编译报警。
 
 ![generator-spi3](figures/generator-spi3.png)
-
-## 5 完善代码
-
-![code-xx1](figures/code-xx1.png)
-
-![code-xx2](figures/code-xx2.png)
-
-## 6 编写README.md文件
-
-参考其他[已经适配RTduino的BSP](/zh/beginner/rtduino?id=已经适配rtduino的rt-thread-bsp)编写。
