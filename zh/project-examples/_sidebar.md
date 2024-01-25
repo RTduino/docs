@@ -10,3 +10,6 @@
 - 扩展板(Shield)
   - [Arduino官方传感器扩展板](/zh/project-examples/shields/ArduinoSensorKit/ArduinoSensorKit.md)
   - [9合1扩展板](/zh/project-examples/shields/nine-in-one-shield/nine-in-one-shield.md)
+
+- 开发板(BSP)
+  - [瑞萨HMI-Board使用VSCode开发RTduino(结合SSD1306 OLED)](/zh/project-examples/bsps/RA6M3-HMI-Board/RA6M3-HMI-Board.md)
