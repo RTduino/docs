@@ -17,5 +17,5 @@
     - [如何支持新MCU索引](/zh/manual/adapt/bsp/pinout-generator/add-mcu.md)
 
 - RTduino多线程
-  - [什么是RTduino多线程](/zh/manual/multi-threading/what-is-multi-threading.md)
+  - [RTduino多线程编程](/zh/manual/multi-threading/multi-threading-programming.md)
   - [sketch文件的编译命令与编译方法](/zh/manual/multi-threading/sketch-loader.md)
