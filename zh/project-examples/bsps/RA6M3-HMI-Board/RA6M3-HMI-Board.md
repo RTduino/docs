@@ -1,4 +1,4 @@
-# 瑞萨HMI-Board使用vscode开发RTduino(结合SSD1306 OLED)
+# 瑞萨HMI-Board驱动SSD1306 OLED
 
 ---
 
@@ -13,7 +13,7 @@
 硬件环境：
 
 *   RA6M3-HMI-Board 开发板
-*   0.96寸 ssd1306 oled 显示屏
+*   0.96寸 SSD1306 OLED 显示屏
 
 ## 2.工程配置
 
@@ -118,11 +118,11 @@ download link: https://github.com/RT-Thread-Studio/sdk-debugger-pyocd/releases
 
 到这里 RTduino 就已经成功运行在 RT-Thread 啦！
 
-## 5.demo：使用 RTduino 驱动 0.96寸 ssd1306 oled
+## 5.demo：使用 RTduino 驱动 0.96寸 SSD1306 OLED
 
-在上面的环节中我们已经成功运行 RTduino 了，接下来我们将通过`RTduino`，并在`RT-Thread`中使用 `Arduino` 源码驱动一个 oled 屏幕。
+在上面的环节中我们已经成功运行 RTduino 了，接下来我们将通过`RTduino`，并在`RT-Thread`中使用 `Arduino` 源码驱动一个 OLED 屏幕。
 
-我们接着回到 ENV 中，使用 `menuconfig`命令打开菜单，同时使用 `shift + /`打开搜索界面，并且输入：`ssd1306`关键字后回车搜索，在出现的页面我们使用键盘的方向键向下翻找，找到 `Adafruit SSD1306`对应的 `2`选项，进入点击 `y` 使能：
+我们接着回到 ENV 中，使用 `menuconfig`命令打开菜单，同时使用 `shift + /`打开搜索界面，并且输入：`SSD1306`关键字后回车搜索，在出现的页面我们使用键盘的方向键向下翻找，找到 `Adafruit SSD1306` 对应的 `2` 选项，进入点击 `y` 使能：
 
 ![image-20240123184834403](figures/image-20240123184834403.png)
 
@@ -138,7 +138,7 @@ download link: https://github.com/RT-Thread-Studio/sdk-debugger-pyocd/releases
 $ cd rt-thread\bsp\renesas\ra6m3-hmi-board\board\rtduino\arduino_main.cpp
 ```
 
-```bash
+```c
 /*
  * Copyright (c) 2006-2023, RT-Thread Development Team
  *
@@ -148,8 +148,6 @@ $ cd rt-thread\bsp\renesas\ra6m3-hmi-board\board\rtduino\arduino_main.cpp
  * Date           Author         Notes
  * 2023-10-28     Wangyuqiang    first version
  */
-
-#include <Arduino.h>
 
 #include <SPI.h>
 #include <Wire.h>
@@ -565,12 +563,11 @@ void testanimate(const uint8_t *bitmap, uint8_t w, uint8_t h) {
 
 在此示例中有几点注意事项：
 
-*   在每一份添加的示例工程中，我们都必须要包含头文件 `#include <Arduino.h>`
-*   由于我的这款 ssd1306 oled 显示屏是 i2c 驱动，i2c地址为 `0x3c`，所以对应示例工程中的 `SCREEN_ADDRESS`需要修改为 `0X3C`
+* 由于我的这款 SSD1306 OLED 显示屏是 i2c 驱动，i2c地址为 `0x3c`，所以对应示例工程中的 `SCREEN_ADDRESS` 需要修改为 `0X3C`
 
 ![image-20240123190157061](figures/image-20240123190157061.png)
 
-*   由于 Arduino 代码风格是一般不会添加函数声明的，需要我们手动添加一遍
+* 由于 Arduino 代码风格是一般不会添加函数声明的，需要我们手动添加一遍
 
 ![image-20240123190348607](figures/image-20240123190348607.png)
 
