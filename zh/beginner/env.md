@@ -56,7 +56,7 @@ set-executionpolicy remotesigned
 
 这里以 `arm-none-eabi-gcc` 工具链为例，这个工具链是最常用的工具链，ARM架构平台（如STM32）普遍使用的工具链。我们[下载](https://developer.arm.com/downloads/-/gnu-rm)并安装工具链。
 
-![armtoolchain-download](./figures/armtoolchain-download.png)
+![armtoolchain-download](./figures/env/armtoolchain-download.png)
 
 打开上一小节刚刚提到的 `Microsoft.PowerShell_profile.ps1` 文件，并附加工具链bin文件夹所在路径，例如：
 
@@ -81,7 +81,7 @@ Windows 7操作系统使用第三方终端ConEmu作为平台。RT-Thread基于Co
 
 根据如下步骤操作，就可以在任意文件夹下通过右键菜单来启动 Env 控制台：
 
-![conemu-addrightclick](./figures/conemu-addrightclick.png)
+![conemu-addrightclick](./figures/env/conemu-addrightclick.png)
 
 > ⚠️注意：
 > 
@@ -136,7 +136,7 @@ chmod 777 install_ubuntu.sh
 
 仓库地址：https://gitee.com/rtthread/rt-thread
 
-![rtthread-gitee-repo-download](./figures/rtthread-gitee-repo-download.png)
+![rtthread-gitee-repo-download](./figures/env/rtthread-gitee-repo-download.png)
 
 #### 3.1.2 方法2 - clone RT-Thread仓库代码
 
@@ -152,7 +152,7 @@ git clone https://gitee.com/rtthread/rt-thread.git
 
 仓库地址：https://github.com/RT-Thread/rt-thread
 
-![rtthread-github-repo-download](./figures/rtthread-github-repo-download.png)
+![rtthread-github-repo-download](./figures/env/rtthread-github-repo-download.png)
 
 #### 3.1.2 方法2 - clone RT-Thread仓库代码
 
@@ -262,7 +262,7 @@ optional arguments:
 
 这些软件包位于 `RT-Thread online packages` 菜单下，进入该菜单后，则可以看如下软件包分类：
 
-![软件包分类](./figures/menuconfig_packages_list.png)
+![软件包分类](./figures/env/menuconfig_packages_list.png)
 
 找到你需要的软件包然后选中开启，保存并退出 menuconfig 。此时软件包已被标记选中，但是还没有下载到本地，所以还无法使用。
 

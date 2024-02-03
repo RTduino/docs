@@ -12,7 +12,7 @@ Arduino UNO的历史可以追溯到Arduino项目的初始阶段，于2005年由�
 
 Arduino UNO于2010年首次发布，采用了Atmel公司的ATmega328P微控制器作为其核心。这款微控制器提供了14个数字输入/输出引脚，其中包括6个可用作PWM输出，以及6个模拟输入引脚。UNO还配备了一个16 MHz的晶振、一个USB连接口、一个电源插座和一个复位按钮，使其成为一个功能齐全、易于使用的开发平台。
 
-![arduino-uno-board.jpg](./figures/arduino-uno-board.jpg)
+![arduino-uno-board.jpg](./figures/arduino-pinout/arduino-uno-board.jpg)
 
 Arduino UNO的成功部分归功于其开放源代码的设计理念。其硬件和软件的全部设计文件都是公开的，使用户能够深入了解和修改设计，促进了创新和知识共享。这种开源精神吸引了全球广泛的社区参与，推动了Arduino生态系统的发展。
 

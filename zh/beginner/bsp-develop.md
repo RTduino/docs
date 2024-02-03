@@ -104,7 +104,7 @@ Hardware Drivers Config --->
 
 连续按ESC键，保存(Yes)并退出，此时Env工具会自动下载所需的软件包：
 
-![env-downloading-pkgs](./figures/env-downloading-pkgs.png)
+![env-downloading-pkgs](./figures/bsp-develop/env-downloading-pkgs.png)
 
 > ⚠️注意：
 > 
@@ -124,9 +124,9 @@ Hardware Drivers Config --->
 
 在软件包均下载完毕之后，即可通过 `scons -j20` 命令来编译工程（20表示20个核心并行编译，数字根据电脑硬件实际情况填写）。
 
-![scons-compiling-1](./figures/scons-compiling-1.png)
+![scons-compiling-1](./figures/bsp-develop/stm32/scons-compiling-1.png)
 
-![scons-compiling-2](./figures/scons-compiling-2.png)
+![scons-compiling-2](./figures/bsp-develop/stm32/scons-compiling-2.png)
 
 编译后，会在 `stm32f411-st-nucleo` 文件夹下生成 `rtthread.bin` 文件，该文件即为要烧入到板卡的二进制文件。
 
@@ -138,11 +138,11 @@ Hardware Drivers Config --->
 
 打开STM32CubeProgrammer软件并点击**Connect按钮**：
 
-![STM32CubeProgrammer-connect](./figures/STM32CubeProgrammer-connect.png)
+![STM32CubeProgrammer-connect](./figures/bsp-develop/stm32/STM32CubeProgrammer-connect.png)
 
 将bin文件**拖入**到STM32CubeProgrammer界面内并点击**Download按钮**，即可完成程序烧录：
 
-![STM32CubeProgrammer-download](./figures/STM32CubeProgrammer-download.png)
+![STM32CubeProgrammer-download](./figures/bsp-develop/stm32/STM32CubeProgrammer-download.png)
 
 至此，你的RTduino程序就在板卡上运行起来了！
 
