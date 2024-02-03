@@ -28,6 +28,18 @@
 | [STM32F411 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout) |     |
 | [STM32L476 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l476-st-nucleo/applications/arduino_pinout) |     |
 
+## ** Raspberry Pi Pico **
+
+| BSP名称                                                                                                                  | 资料  |
+| ---------------------------------------------------------------------------------------------------------------------- | --- |
+| [Raspberry Pi Pico](https://github.com/RT-Thread/rt-thread/tree/master/bsp/raspberry-pico/applications/arduino_pinout) |     |
+
+## ** Renesas 瑞萨 **
+
+| BSP名称                                                                                                                       | 资料  |
+| --------------------------------------------------------------------------------------------------------------------------- | --- |
+| [瑞萨 RA6M3 HMI](https://github.com/RT-Thread/rt-thread/tree/master/bsp/renesas/ra6m3-hmi-board/board/rtduino/arduino_pinout) |     |
+
 <!-- tabs:end -->
 
 ### 2.2 社区适配BSP
@@ -48,16 +60,6 @@
 | [STM32U575 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32u575-st-nucleo/applications/arduino_pinout)          | [STM32F469 Discovery](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f469-st-disco/applications/arduino_pinout)           |
 | [STM32F410 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f410-st-nucleo/applications/arduino_pinout)          |                                                                                                                                              |
 
-## ** Raspberry Pi Pico **
-
-## ** Renesas 瑞萨 **
-
-以下 BSP 由 RTduino/RT-Thread 社区支持。
-
-| BSP名称                                                                                                                            | 资料  |
-| -------------------------------------------------------------------------------------------------------------------------------- | --- |
-| [瑞萨 RA6M3 HMI](https://github.com/RT-Thread/rt-thread/tree/master/bsp/renesas/ra6m3-hmi-board/board/rtduino/arduino_pinout) |     |
-
 ## ** NXP 恩智浦 **
 
 | BSP名称                                                                                                                            | 资料  |
@@ -66,16 +68,16 @@
 
 ## ** CH32 **
 
-| BSP名称                                                                                                                            | 资料  |
-| -------------------------------------------------------------------------------------------------------------------------------- | --- |
+| BSP名称                                                                                                                      | 资料  |
+| -------------------------------------------------------------------------------------------------------------------------- | --- |
 | [CH32V307V-R1](https://github.com/RT-Thread/rt-thread/tree/master/bsp/wch/risc-v/ch32v307v-r1/applications/arduino_pinout) |     |
 | [CH32V208W-R0](https://github.com/RT-Thread/rt-thread/tree/master/bsp/wch/risc-v/ch32v208w-r0/applications/arduino_pinout) |     |
 
 ## ** 东软载波 **
 
-| BSP名称                                                                                                                            | 资料  |
-| -------------------------------------------------------------------------------------------------------------------------------- | --- |
-| [ES32F3696](https://github.com/RT-Thread/rt-thread/tree/master/bsp/essemi/es32f369x/applications/arduino_pinout) |     |
+| BSP名称                                                                                                              | 资料  |
+| ------------------------------------------------------------------------------------------------------------------ | --- |
+| [ES32F3696](https://github.com/RT-Thread/rt-thread/tree/master/bsp/essemi/es32f369x/applications/arduino_pinout)   |     |
 | [ES32VF2264](https://github.com/RT-Thread/rt-thread/tree/master/bsp/essemi/es32vf2264/applications/arduino_pinout) |     |
 
 <!-- tabs:end -->
@@ -143,5 +145,9 @@ Hardware Drivers Config --->
 ![STM32CubeProgrammer-download](./figures/STM32CubeProgrammer-download.png)
 
 至此，你的RTduino程序就在板卡上运行起来了！
+
+## ** Raspberry Pi Pico (Ubuntu) **
+
+## ** Renesas 瑞萨 (Windows 10) **
 
 <!-- tabs:end -->
