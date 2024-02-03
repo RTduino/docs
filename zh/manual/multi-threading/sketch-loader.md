@@ -1,12 +1,4 @@
-# sketch文件的编译命令与编译方法
-
-## 1 以命令行方式编译运行sketch文件
-
-在 Arduino 中，编程源码文件被称之为 "sketch" (草稿之意)，其文件后缀为 `.ino`，具体 Arduino IDE 对 sketch 文件的编译方法，参见 [Arduino CLI文档](https://arduino.github.io/arduino-cli/0.33/sketch-build-process/) 。
-
-RTduino支持对 `.ino` 文件的直接编译，方法很简单，使用命令 `scons -j20 --sketch=".ino文件的绝对路径"` 即可完成编译，其中 `-j20` 表示20个CPU并发编译（取决于计算机有多少个核心）以提高编译速度，`--sketch=""` 用于指定 `.ino` 文件的绝对路径。这样RTduino就会单独创建一个新的线程运行该sketch文件内的源码。
-
-## 2 RTduino sketch loader 自动初始化机制
+# sketch loader自动初始化机制
 
 RTduino 是基于 RT-Thread 操作系统开发，因此支持多线程并发是浑然天成的，也是 Arduino 并不具备的。使用 RTduino，我们可以通过 **sketch loader** 创建**任意多个** sketch 源文件并以多线程的方式独立运行，互不干扰。
 
@@ -17,7 +9,7 @@ RTduino 是基于 RT-Thread 操作系统开发，因此支持多线程并发是�
 -  `RTDUINO_SKETCH_LOADER_STACKSIZE`：使用默认线程优先级，并重新设置线程栈大小
 -  `RTDUINO_SKETCH_LOADER_STACKSIZE_PRIO`：重新设置线程栈大小以及线程优先级
 
-以下为示例：
+以下为示例，更多内容请参见 RTduino 文档中心 [sketch loader 使用示例](/zh/project-examples/demos/sketch-loader/sketch-loader)章节。
 
 ```c
 #include <RTduino.h> /* 包含头文件，注意是<RTduino.h>，不是<Arduino.h> */

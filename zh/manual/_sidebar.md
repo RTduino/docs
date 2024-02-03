@@ -18,4 +18,5 @@
 
 - RTduino多线程
   - [RTduino多线程编程](/zh/manual/multi-threading/multi-threading-programming.md)
-  - [sketch文件的编译命令与编译方法](/zh/manual/multi-threading/sketch-loader.md)
+  - [以命令行方式编译运行sketch文件](/zh/manual/multi-threading/sketch.md)
+  - [sketch loader自动初始化机制](/zh/manual/multi-threading/sketch-loader.md)
