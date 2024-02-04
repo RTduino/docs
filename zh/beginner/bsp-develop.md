@@ -22,34 +22,34 @@
 
 ## ** STM32 **
 
-| BSP名称                                                                                                                                     | 资料  |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| [STM32F072 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f072-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32F401 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32F410 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f410-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32F411 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32F412 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f412-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32L476 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l476-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32G474 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32g474-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32U575 Nucleo](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32u575-st-nucleo/applications/arduino_pinout)          |     |
-| [STM32F469 Discovery](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f469-st-disco/applications/arduino_pinout)        |     |
-| [STM32F103 BluePill](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f103-blue-pill/applications/arduino_pinout)        |     |
-| [STM32F401 BlackPill](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-weact-blackpill/applications/arduino_pinout) |     |
-| [STM32F411 BlackPill](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-weact-blackpill/applications/arduino_pinout) |     |
-| [STM32L475潘多拉](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/applications/arduino_pinout)            |     |
-| [STM32L431小熊派](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l431-BearPi/applications/arduino_pinout)                 |     |
-
-## ** Raspberry Pi Pico **
-
-| BSP名称                                                                                                                  | 资料  |
-| ---------------------------------------------------------------------------------------------------------------------- | --- |
-| [Raspberry Pi Pico](https://github.com/RT-Thread/rt-thread/tree/master/bsp/raspberry-pico/applications/arduino_pinout) |     |
+| BSP名称               | 仓库 & 概述                                                                                                                                                                                                                                      | [标准引脚布局](/zh/beginner/arduino-pinout) | DigitalWrite & Read | AnalogWrite / PWM | AnalogRead / ADC | 串口  | I2C | SPI |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------- | ----------------- | ---------------- | --- | --- | --- |
+| STM32F072 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f072-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f072-st-nucleo/applications/arduino_pinout) | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32F401 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout) | √                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32F410 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f410-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f410-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32F411 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32F412 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f412-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f412-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32L476 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l476-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32l476-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32G474 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32g474-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32g474-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32U575 Nucleo    | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32u575-st-nucleo/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32u575-st-nucleo)                             | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32F469 Discovery | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f469-st-disco/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f469-st-disco)                               | √                                     | √                   | √                 | √                | √   | √   |     |
+| STM32F103 BluePill  | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f103-blue-pill/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f103-blue-pill)                             | ×                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32F401 BlackPill | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-weact-blackpill/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f401-weact-blackpill)                 | ×                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32F411 BlackPill | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-weact-blackpill/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32f411-weact-blackpill)                 | ×                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32L475潘多拉        | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora)                         | ×                                     | √                   | √                 | √                | √   | √   | √   |
+| STM32L431小熊派        | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l431-BearPi/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32l431-BearPi)                                   | ×                                     | √                   | √                 | √                | √   | √   |     |
 
 ## ** Renesas 瑞萨 **
 
-| BSP名称                                                                                                                       | 资料  |
-| --------------------------------------------------------------------------------------------------------------------------- | --- |
-| [瑞萨 RA6M3 HMI](https://github.com/RT-Thread/rt-thread/tree/master/bsp/renesas/ra6m3-hmi-board/board/rtduino/arduino_pinout) |     |
+| BSP名称        | 仓库 & 概述                                                                                                                                                                                                                                    | [标准引脚布局](/zh/beginner/arduino-pinout) | DigitalWrite & Read | AnalogWrite / PWM | AnalogRead / ADC | 串口  | I2C | SPI |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ------------------- | ----------------- | ---------------- | --- | --- | --- |
+| 瑞萨 RA6M3 HMI | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/renesas/ra6m3-hmi-board/board/rtduino/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/renesas/ra6m3-hmi-board/board/rtduino/arduino_pinout) | √                                     | √                   | √                 | √                | √   | √   |     |
+
+## ** Raspberry Pi Pico **
+
+| BSP名称             | 仓库 & 概述                                                                                                                                                                                                                | [标准引脚布局](/zh/beginner/arduino-pinout) | DigitalWrite & Read | AnalogWrite / PWM | AnalogRead / ADC | 串口  | I2C | SPI |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------- | ----------------- | ---------------- | --- | --- | --- |
+| Raspberry Pi Pico | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/raspberry-pico/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/raspberry-pico/applications/arduino_pinout) | ×                                     | √                   | √                 | √                | √   | ×   | ×   |
 
 <!-- tabs:end -->
 
@@ -152,8 +152,8 @@ Hardware Drivers Config --->
 
 至此，你的RTduino程序就在板卡上运行起来了！
 
-## ** Raspberry Pi Pico (Ubuntu) **
-
 ## ** Renesas 瑞萨 (Windows 10) **
+
+## ** Raspberry Pi Pico (Ubuntu) **
 
 <!-- tabs:end -->
