@@ -96,6 +96,8 @@
 
 ## ** STM32 (Windows 10) **
 
+本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Windows 10 下的环境搭建好。
+
 这里以 `stm32f411-st-nucleo` BSP、Windows 10 操作系统环境为例，需要进入到 `rt-thread/bsp/stm32/stm32f411-st-nucleo` 文件夹下，按住Shift键+单击鼠标右键，点击**在此处打开 PowerShell 窗口**。
 
 ### 3.1 使能RTduino
@@ -154,6 +156,10 @@ Hardware Drivers Config --->
 
 ## ** Renesas 瑞萨 (Windows 10) **
 
+本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Windows 10 下的环境搭建好。
+
 ## ** Raspberry Pi Pico (Ubuntu) **
+
+本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Ubuntu 下的环境搭建好。
 
 <!-- tabs:end -->
