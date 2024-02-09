@@ -12,4 +12,10 @@
   - [9合1扩展板](/zh/project-examples/shields/nine-in-one-shield/nine-in-one-shield.md)
 
 - 开发板(BSP)
-  - [瑞萨HMI-Board驱动SSD1306 OLED](/zh/project-examples/bsps/RA6M3-HMI-Board/RA6M3-HMI-Board.md)
+  - 瑞萨HMI-Board
+    - [驱动SSD1306 OLED](/zh/project-examples/bsps/RA6M3-HMI-Board/SSD1306.md)
+  - STM32F411 Nucleo
+  - STM32F469 Discovery
+  - STM32L475潘多拉
+    - [驱动ST7789 TFT](/zh/project-examples/bsps/STM32L475-Pandora/ST7789.md)
+  - Raspberry Pi Pico
