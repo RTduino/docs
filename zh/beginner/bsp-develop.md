@@ -88,19 +88,15 @@
 
 <!-- tabs:end -->
 
-## 3 编译BSP并将程序烧录到板卡
-
-**请在选择所需的对应BSP芯片厂商。**
+## 3 使能RTduino
 
 <!-- tabs:start -->
 
-## ** STM32 (Windows 10) **
+## ** Windows 10 **
 
 本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Windows 10 下的环境搭建好。
 
-这里以 `stm32f411-st-nucleo` BSP、Windows 10 操作系统环境为例，需要进入到 `rt-thread/bsp/stm32/stm32f411-st-nucleo` 文件夹下，按住Shift键+单击鼠标右键，点击**在此处打开 PowerShell 窗口**。
-
-### 3.1 使能RTduino
+这里以 `stm32f411-st-nucleo` BSP、Windows 10 操作系统环境为例，需要进入到 `rt-thread/bsp/stm32/stm32f411-st-nucleo` 文件夹下，按住 Shift 键+单击鼠标右键，点击**在此处打开 PowerShell 窗口**。
 
 在 menuconfig 界面中，选择使能 RTduino：
 
@@ -110,9 +106,15 @@ Hardware Drivers Config --->
         [*] Compatible with Arduino Ecosystem (RTduino)
 ```
 
-连续按ESC键，保存(Yes)并退出，此时Env工具会自动下载所需的软件包：
+![rtduino-enable](./figures/bsp-develop/rtduino-enable.png)
+
+连续按 ESC 键，保存 (Yes) 并退出，此时 Env 工具会自动下载所需的软件包：
 
 ![env-downloading-pkgs](./figures/bsp-develop/env-downloading-pkgs.png)
+
+我们可以注意到在 BSP 根目录下生成了一个 packages 目录，并下载了我们所需的 RTduino 依赖库：
+
+![rtduino-packages](./figures/bsp-develop/rtduino-packages.png)
 
 > ⚠️注意：
 > 
@@ -126,40 +128,48 @@ Hardware Drivers Config --->
 >     [ ] Send usage data for improve product
 > ```
 > 
-> 2. 下载依赖软件包时，如果出现下载失败的问题，请检查是否开启了VPN，VPN会干扰软件包下载，请关闭VPN。
+> 2. 下载依赖软件包时，如果出现下载失败的问题，请检查是否开启了 VPN，VPN 会干扰软件包下载，请关闭 VPN。
 
-### 3.2 编译BSP
+## ** Ubuntu **
 
-在软件包均下载完毕之后，即可通过 `scons -j20` 命令来编译工程（20表示20个核心并行编译，数字根据电脑硬件实际情况填写）。
+本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Ubuntu 下的环境搭建好。
+
+<!-- tabs:end -->
+
+## 4 编译BSP
+
+在软件包均下载完毕之后，即可通过 `scons -j12` 命令来编译工程（12表示12个 CPU 核心并行编译，数字根据电脑硬件实际情况填写）。
 
 ![scons-compiling-1](./figures/bsp-develop/stm32/scons-compiling-1.png)
 
 ![scons-compiling-2](./figures/bsp-develop/stm32/scons-compiling-2.png)
 
-编译后，会在 `stm32f411-st-nucleo` 文件夹下生成 `rtthread.bin` 文件，该文件即为要烧入到板卡的二进制文件。
+## 5 将程序烧录到板卡
 
-### 3.3 将bin文件烧录到板卡
+**请在选择所需的对应BSP芯片厂商。**
 
-下载[STM32CubeProgrammer](https://www.stmcu.com.cn/ecosystem/Cube/STM32CubeProg)软件，该软件用于将bin文件下载到STM32板卡中。[下载地址](https://www.stmcu.com.cn/Designresource/detail/software/709549)。
+<!-- tabs:start -->
 
-安装后，将STM32 F411 Nucleo板通过USB线插到计算机上。
+## ** STM32 (Windows 10) **
 
-打开STM32CubeProgrammer软件并点击**Connect按钮**：
+编译后，会在 BSP 文件夹的根目录下生成 `rtthread.bin` 文件，该文件即为要烧入到板卡的二进制文件。
+
+下载 [STM32CubeProgrammer](https://www.stmcu.com.cn/ecosystem/Cube/STM32CubeProg) 软件，该软件用于将 bin 文件下载到 STM32 板卡中。[下载地址](https://www.stmcu.com.cn/Designresource/detail/software/709549)。
+
+安装后，将 STM32 F411 Nucleo 板通过 USB 线插到计算机上。
+
+打开 STM32CubeProgrammer 软件并点击 **Connect 按钮**：
 
 ![STM32CubeProgrammer-connect](./figures/bsp-develop/stm32/STM32CubeProgrammer-connect.png)
 
-将bin文件**拖入**到STM32CubeProgrammer界面内并点击**Download按钮**，即可完成程序烧录：
+将 bin 文件**拖入**到 STM32CubeProgrammer 界面内并点击 **Download 按钮**，即可完成程序烧录：
 
 ![STM32CubeProgrammer-download](./figures/bsp-develop/stm32/STM32CubeProgrammer-download.png)
 
-至此，你的RTduino程序就在板卡上运行起来了！
+至此，你的 RTduino 程序就在板卡上运行起来了！
 
 ## ** Renesas 瑞萨 (Windows 10) **
 
-本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Windows 10 下的环境搭建好。
-
 ## ** Raspberry Pi Pico (Ubuntu) **
-
-本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Ubuntu 下的环境搭建好。
 
 <!-- tabs:end -->
