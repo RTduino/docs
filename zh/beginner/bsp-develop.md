@@ -106,7 +106,7 @@
 
 本节默认使用者已经搭建好 Env 环境，如果你还没有搭建 Env 环境，请参照 [Env 编译环境搭建](/zh/beginner/env)章节，将 Env 工具在 Windows 10 下的环境搭建好。
 
-这里以 `stm32f411-st-nucleo` BSP、Windows 10 操作系统环境为例，需要进入到 `rt-thread/bsp/stm32/stm32f411-st-nucleo` 文件夹下，按住 Shift 键+单击鼠标右键，点击**在此处打开 PowerShell 窗口**，并在窗口内键入  `menuconfig` 命令。
+这里以 STM32F411 Nucleo BSP、Windows 10 操作系统环境为例，需要进入到 `rt-thread/bsp/stm32/stm32f411-st-nucleo` 文件夹下，按住 Shift 键+单击鼠标右键，点击**在此处打开 PowerShell 窗口**，并在窗口内键入  `menuconfig` 命令。
 
 在 menuconfig 配置界面中，选择使能 RTduino：
 
