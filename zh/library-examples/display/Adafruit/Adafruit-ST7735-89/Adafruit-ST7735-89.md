@@ -24,17 +24,8 @@ Adafruit 是一个海外 Arduino 开源硬件社区，其贡献了[大量 Arduin
 
 ST7735是一款高性能的TFT屏幕驱动芯片，由 Sitronix 公司推出。其支持多种分辨率和尺寸，包括128x160、128x128等，具备出色的16/18位色深，为用户提供细腻生动的图像显示。适用于嵌入式系统、便携设备及DIY电子项目，可通过SPI和8位并行接口实现快速而灵活的数据传输。
 
-ST7735 芯片手册：
-
-```pdf
-https://www.displayfuture.com/Display/datasheet/controller/ST7735.pdf
-```
-
-ST7789 芯片手册：
-
-```pdf
-https://newhavendisplay.com/content/datasheets/ST7789V.pdf
-```
+- ST7735 芯片手册：https://www.displayfuture.com/Display/datasheet/controller/ST7735.pdf
+- ST7789 芯片手册：https://newhavendisplay.com/content/datasheets/ST7789V.pdf
 
 ## 3 如何运行Adafruit ST7735/89库
 
