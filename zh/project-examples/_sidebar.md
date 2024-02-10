@@ -17,5 +17,6 @@
   - STM32F411 Nucleo
   - STM32F469 Discovery
   - STM32L475潘多拉
-    - [驱动ST7789 TFT](/zh/project-examples/bsps/STM32L475-Pandora/ST7789.md)
+    - [驱动ST7789显示屏](/zh/project-examples/bsps/STM32L475-Pandora/ST7789.md)
+    - [驱动AHT10温湿度传感器](/zh/project-examples/bsps/STM32L475-Pandora/AHT10.md)
   - Raspberry Pi Pico
