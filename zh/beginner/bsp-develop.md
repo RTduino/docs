@@ -205,4 +205,12 @@ Hardware Drivers Config --->
 
 ## ** Raspberry Pi Pico (Ubuntu) **
 
+编译后，会在 BSP 文件夹的根目录下生成 `rtthread-pico.uf2` 文件，该文件即为要烧入到板卡的固件。
+
+首先断电并按住板子的 BOOTSEL 键，通过 USB 连接至 PC ，连接 Pico 后松开 BOOTSEL 键，这里可以让我们的系统进入到 Pico 的 BOOT 模式，PC 会将Pico识别为一个大容量的存储设备。
+
+![Pico 的 BOOT 模式](./figures/bsp-develop/Raspberry-Pi-Pico/pico-boot-usb.png)
+
+将之前生成的 `rtthread-pico.uf2` 文件拖入该设备即可，Pico 将会自动重启。至此，你的 RTduino 程序就在板卡上运行起来了！
+
 <!-- tabs:end -->
