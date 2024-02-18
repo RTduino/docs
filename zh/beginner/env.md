@@ -209,6 +209,10 @@ Hardware Drivers Config --->
 
 选择 `Compatible with Arduino Ecosystem (RTduino)` 选项后，直接连续按ESC键保存并退出，Env会自动使能本BSP中RTduino所依赖的相关硬件（如I2C、PWM等），自动下载RTduino软件包并将其纳入到该BSP的RT-Thread工程中。
 
+> 注：
+>
+> 如果不想使能 `menuconfig -s` 中的自动下载依赖软件包功能，也可以配置完毕后，使用 `pkgs --update` 命令手动触发下载。
+
 #### 3.2.3  scons 编译BSP
 
 在软件包均下载完毕之后，即可通过 `scons -j20` 命令来编译工程（20表示20个核心并行编译，数字根据电脑硬件实际情况填写）。
