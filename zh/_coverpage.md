@@ -4,4 +4,5 @@
 [RTduino使用手册](/zh/manual/README.md)
 [Arduino库使用实例](/zh/library-examples/README.md)
 [RTduino项目实例](/zh/project-examples/README.md)
+[RTduino源码参考手册](https://source.rtduino.com)
 [代码贡献与反馈](/zh/contribute/pr.md)
