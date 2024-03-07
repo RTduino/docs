@@ -75,7 +75,7 @@ $env:RTT_EXEC_PATH="C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10
 
 ### 2.1 下载与安装
 
-Windows 7操作系统或Windows 10及以上操作系统使用Powershell方法有问题的话，可以使用第三方终端ConEmu作为平台。RT-Thread基于ConEmu终端集成了所有Env功能，[下载](https://github.com/RT-Thread/env-windows/releases)最新发布版本（.7z压缩包）并解压即可使用，非常方便。
+Windows 7 操作系统或 Windows 10 及以上操作系统使用 Powershell 方法有问题的话，可以使用第三方终端 ConEmu 作为平台。RT-Thread 基于 ConEmu 终端集成了所有 Env 功能，[下载](https://www.rt-thread.org/download.html#download-rt-thread-env-tool)最新发布版本（.7z压缩包）并解压即可使用，非常方便。
 
 进入解压文件夹的目录，可以运行本目录下的 `env.exe`，如果打开失败可以尝试使用 `env.bat`。
 
