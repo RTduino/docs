@@ -18,7 +18,7 @@ Env 是 RT-Thread 推出的开发辅助工具，针对基于 RT-Thread 操作系
 
 <!-- tabs:start -->
 
-## ** Windows 10 **
+## ** Windows Powershell **
 
 ### 2.1 下载与安装
 
@@ -71,11 +71,11 @@ $env:RTT_EXEC_PATH="C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10
 > 2. 一定要关闭杀毒软件，否则安装过程可能会被杀毒软件强退。
 
 
-## ** Windows 7 **
+## ** Windows ConEmu **
 
 ### 2.1 下载与安装
 
-Windows 7操作系统使用第三方终端ConEmu作为平台。RT-Thread基于ConEmu终端集成了所有Env功能，[下载](https://github.com/RT-Thread/env-windows/releases)最新发布版本（.7z压缩包）并解压即可使用。
+Windows 7操作系统或Windows 10及以上操作系统使用Powershell方法有问题的话，可以使用第三方终端ConEmu作为平台。RT-Thread基于ConEmu终端集成了所有Env功能，[下载](https://github.com/RT-Thread/env-windows/releases)最新发布版本（.7z压缩包）并解压即可使用，非常方便。
 
 进入解压文件夹的目录，可以运行本目录下的 `env.exe`，如果打开失败可以尝试使用 `env.bat`。
 
