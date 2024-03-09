@@ -18,6 +18,24 @@ Env 是 RT-Thread 推出的开发辅助工具，针对基于 RT-Thread 操作系
 
 <!-- tabs:start -->
 
+## ** Windows ConEmu **
+
+### 2.1 下载与安装
+
+ConEmu 是个第三方终端软件，RT-Thread 基于 ConEmu 终端集成了所有 Env 功能，内部默认集成 `arm-none-eabi-gcc` 工具链，以及 QEMU 仿真。用户可以直接[下载](https://www.rt-thread.org/download.html#download-rt-thread-env-tool)最新发布版本（.7z压缩包）并解压即可使用，无需搭建环境，可以直接运行在 Windows 7(64位) 及以上的 Windows 64位操作系统上。**推荐初学者使用**。
+
+进入解压文件夹的目录，可以运行本目录下的 `env.exe`，如果打开失败可以尝试使用 `env.bat`。
+
+根据如下步骤操作，就可以在任意文件夹下通过右键菜单来启动 Env 控制台：
+
+![conemu-addrightclick](./figures/env/conemu-addrightclick.png)
+
+> ⚠️注意：
+>
+> 1. Env-ConEmu 版本会内置QEMU以及 `arm-none-eabi-gcc`，编译ARM平台的BSP时可以直接 `scons` 编译。无需额外设置工具链的环境变量。
+> 2. 因为需要设置 Env 进程的环境变量，第一次启动可能会出现杀毒软件误报的情况，如果遇到了杀毒软件误报，请允许 Env 相关程序运行，然后将相关程序添加至白名单即可。
+
+
 ## ** Windows Powershell **
 
 ### 2.1 下载与安装
@@ -66,28 +84,9 @@ $env:RTT_EXEC_PATH="C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10
 ```
 
 > ⚠️注意：
-> 
+>
 > 1. 开启VPN可能会影响clone，请关闭VPN；
 > 2. 一定要关闭杀毒软件，否则安装过程可能会被杀毒软件强退。
-
-
-## ** Windows ConEmu **
-
-### 2.1 下载与安装
-
-Windows 7 操作系统或 Windows 10 及以上操作系统使用 Powershell 方法有问题的话，可以使用第三方终端 ConEmu 作为平台。RT-Thread 基于 ConEmu 终端集成了所有 Env 功能，[下载](https://www.rt-thread.org/download.html#download-rt-thread-env-tool)最新发布版本（.7z压缩包）并解压即可使用，非常方便。
-
-进入解压文件夹的目录，可以运行本目录下的 `env.exe`，如果打开失败可以尝试使用 `env.bat`。
-
-根据如下步骤操作，就可以在任意文件夹下通过右键菜单来启动 Env 控制台：
-
-![conemu-addrightclick](./figures/env/conemu-addrightclick.png)
-
-> ⚠️注意：
-> 
-> 1. Env-ConEmu 版本会内置QEMU以及 `arm-none-eabi-gcc`，编译ARM平台的BSP时可以直接 `scons` 编译。无需额外设置工具链的环境变量。
-> 2. 因为需要设置 Env 进程的环境变量，第一次启动可能会出现杀毒软件误报的情况，如果遇到了杀毒软件误报，请允许 Env 相关程序运行，然后将相关程序添加至白名单即可。
-
 
 ## ** Ubuntu **
 
