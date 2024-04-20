@@ -15,8 +15,8 @@
     - [pinout-generator简介](/zh/manual/adapt/bsp/pinout-generator/pinout-generator.md)
     - [STM32 BSP适配RTduino](/zh/manual/adapt/bsp/pinout-generator/stm32/pinout-generator-stm32.md)
     - [如何支持新MCU索引](/zh/manual/adapt/bsp/pinout-generator/add-mcu.md)
-  - BSP对接示例
-    - [STM32F4星火一号BSP适配RTduino](/zh/manual/adapt/bsp/examples/stm32f4-rt-spark/stm32f4-rt-spark.md)
+  - BSP适配RTduino示例
+    - [STM32F4星火一号BSP](/zh/manual/adapt/bsp/examples/stm32f4-rt-spark/stm32f4-rt-spark.md)
 
 - RTduino多线程
   - [RTduino多线程编程](/zh/manual/multi-threading/multi-threading-programming.md)
