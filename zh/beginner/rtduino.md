@@ -34,10 +34,18 @@ RTduino 是[RT-Thread实时操作系统](https://www.rt-thread.org)的 Arduino �
 | ES32F3696                 | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/essemi/es32f369x/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/essemi/es32f369x/applications/arduino_pinou)                                    | √                   | √                 | √                | √   | √   | √   |
 | ES32VF2264                | [Github](https://github.com/RT-Thread/rt-thread/tree/master/bsp/essemi/es32vf2264/applications/arduino_pinout) / [Gitee](https://gitee.com/rtthread/rt-thread/tree/master/bsp/essemi/es32vf2264/applications/arduino_pinout)                                 | √                   | √                 | √                | √   | √   | √   |
 
+## 3 开发环境
 
-## 3 编译工具链与环境
+RTduino 支持以下开发环境:
 
-RTduino 作为 RT-Thread 软件包，其本身支持 GCC 工具链以及 Keil AC5、AC6 IDE，但由于 Arduino 社区第三方库均为 GCC 工具链下编写，**因此建议使用 GCC 工具链。RTduino 文档中心将完全基于 GCC 工具链以及 Env + VSCode 编译环境来进行讲解**。
+- GCC
+- VSCode
+- RT-Thread Studio
+- Keil MDK5
+- Keil MDK6
+
+> 注：
+> RTduino作为RT-Thread软件包，其本身支持GCC工具链以及Keil AC5、AC6集成开发环境（IDE），但由于Arduino社区第三方库均为GCC工具链下编写，因此建议使用基于GCC工具链的开发环境。
 
 ## 4 官网与代码仓库
 
