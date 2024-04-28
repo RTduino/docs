@@ -45,7 +45,7 @@ ConEmu 是个第三方终端软件，RT-Thread 基于 ConEmu 终端集成了所�
 对于身在**中国大陆**的用户，请使用如下命令（使用[Gitee镜像源](https://gitee.com/RT-Thread-Mirror/env)下载）：
 
 ``` shell
-wget https://gitee.com/RT-Thread-Mirror/env/raw/master/install_windows.ps1 -O install_windows.ps1
+wget https://gitee.com/RT-Thread-Mirror/env/raw/v1.5.x/install_windows.ps1 -O install_windows.ps1
 set-executionpolicy remotesigned
 .\install_windows.ps1 --gitee
 ```
@@ -53,7 +53,7 @@ set-executionpolicy remotesigned
 对于身在**中国大陆之外**的用户，请使用如下命令（使用[GitHub开发源](https://github.com/RT-Thread/env)下载）：
 
 ``` shell
-wget https://raw.githubusercontent.com/RT-Thread/env/master/install_windows.ps1 -O install_windows.ps1
+wget https://raw.githubusercontent.com/RT-Thread/env/v1.5.x/install_windows.ps1 -O install_windows.ps1
 set-executionpolicy remotesigned
 .\install_windows.ps1
 ```
@@ -97,7 +97,7 @@ $env:RTT_EXEC_PATH="C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10
 对于身在**中国大陆**的用户，请使用如下命令（使用[Gitee镜像源](https://gitee.com/RT-Thread-Mirror/env)拉取）：
 
 ``` shell
-wget https://gitee.com/RT-Thread-Mirror/env/raw/master/install_ubuntu.sh
+wget https://gitee.com/RT-Thread-Mirror/env/raw/v1.5.x/install_ubuntu.sh
 chmod 777 install_ubuntu.sh
 ./install_ubuntu.sh --gitee
 ```
@@ -105,7 +105,7 @@ chmod 777 install_ubuntu.sh
 对于身在**中国大陆之外**的用户，请使用如下命令（使用[GitHub开发源](https://github.com/RT-Thread/env)拉取）：
 
 ``` shell
-wget https://raw.githubusercontent.com/RT-Thread/env/master/install_ubuntu.sh
+wget https://raw.githubusercontent.com/RT-Thread/env/v1.5.x/install_ubuntu.sh
 chmod 777 install_ubuntu.sh
 ./install_ubuntu.sh
 ```
