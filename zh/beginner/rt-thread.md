@@ -28,7 +28,7 @@ RT-Thread 是一个集实时操作系统（RTOS）内核、中间件组件的物
 - 强大，支持高性能应用。
 - 跨平台、芯片支持广泛。
 
-## 4 官网与代码仓库
+## 4 RT-Thread官网与代码仓库
 
 - Github 代码仓库: https://github.com/RT-Thread/rt-thread
 - Gitee 代码仓库: https://gitee.com/rtthread/rt-thread

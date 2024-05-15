@@ -48,10 +48,9 @@ RTduino 支持以下开发环境:
 > 注：
 > RTduino作为RT-Thread软件包，其本身支持GCC工具链以及Keil AC5、AC6集成开发环境（IDE），但由于Arduino社区第三方库均为GCC工具链下编写，因此建议使用基于GCC工具链的开发环境（如 VSCode、RT-Thread Studio）。
 
-## 4 官网与代码仓库
+## 4 RTduino官网与代码仓库
 
 - 官网: http://www.rtduino.com/
+- 文档中心：https://docs.rtduino.com
 - Github 代码仓库: https://github.com/RTduino/RTduino
 - Gitee 代码仓库: https://gitee.com/rtduino/RTduino
-- 文档中心（全球）：https://docs.rtduino.com
-- 文档中心（国内）：https://rtduino.gitee.io
