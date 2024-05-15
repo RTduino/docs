@@ -259,4 +259,4 @@ SPI 功能对于板卡来说是非必须功能，如果板卡支持，则尽量�
 
 SPI的功能属性不是默认IO模式，即若SPI引脚与部分PWM和通用IO功能冲突，PWM或者通用IO才是板卡上电之后的默认IO模式，用户调用 `SPI.begin()` 时，会将SPI端口**永久不可逆地**转换为 SPI-MOSI、SPI-MISO、SPI-CLK。
 
-SPI不使用硬件片选，由Arduino应用程序自己进行软件片选操作，因此适配仅需关心SPI-MOSI、SPI-MISO 和 SPI-CLK三个引脚。SPI-CS这个引脚就是一个正常的通用IO，通过 `digitalWrite()` 函数在 Arduino 应用程序中自行操作。适配时，需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901。
+SPI不使用硬件片选，由Arduino应用程序自己进行软件片选操作，因此适配仅需关心SPI-MOSI、SPI-MISO 和 SPI-CLK三个引脚。SPI-CS这个引脚就是一个正常的通用IO，通过 `digitalWrite()` 函数在 Arduino 应用程序中自行操作。适配时，需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901 。

@@ -7,7 +7,7 @@
   - [Arduino社区库](/zh/manual/libraries/community-libraries.md)
 
 - RTduino适配
-  - [如何为RT-Thread BSP适配RTduino](/zh/manual/adapt/bsp/bsp.md)
+  - [如何为RT-Thread BSP适配RTduino](/zh/manual/adapt/bsp/bsp-adaption.md)
   - BSP适配RTduino示例
     - [STM32F4星火一号BSP](/zh/manual/adapt/bsp/examples/stm32f4-rt-spark/stm32f4-rt-spark.md)
   - [RT-Thread BSP适配RTduino后功能检查清单](/zh/manual/adapt/bsp/func-checklist.md)
