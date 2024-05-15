@@ -10,7 +10,7 @@
 
 ### 1.1 arduino_main.cpp文件
 
-该文件是Arduino的编程入口，提供setup和loop函数。在loop函数默认以200ms为周期，闪烁Arduino内建LED灯（LED_BUILTIN）。如果该BSP默认支持SPI功能且为UNO引脚布局，由于SPI和LED_BUILTIN可能存在冲突(D13)，可以在loop函数内以 `Serial.println("Hello Arduino\n");` 代替频闪LED（例如[STM32F401 Nucleo板](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/main.c)）。
+该文件是 Arduino 的编程入口，提供 setup 和 loop 函数。在 loop 函数默认以 200ms 为周期，闪烁 Arduino 内建 LED 灯（LED_BUILTIN）。如果 LED_BUILTIN 被 RT-Thread 默认主线程的 LED 闪烁示例占用，可以在 loop 函数内以 `Serial.println("Hello Arduino\n");` 代替频闪 LED（例如[STM32F401 Nucleo板](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/main.c)）。
 
 ### 1.2 arduino_pinout文件夹
 
@@ -64,19 +64,19 @@ const pin_map_t pin_map_table[]=
 };
 ```
 
-如上截取展示了IO编号和功能映射表，每一行用花括号包裹（实际是一个结构体）来建议一个IO的映射关系：
+如上截取展示了 IO 编号和功能映射表，每一行用花括号包裹（实际是一个结构体）来建议一个IO的映射关系：
 
 ```
-{Arduino引脚编号, RT-Thread引脚编号(通过GET_PIN宏获取), 复用功能的设备名(PWM、ADC或DAC), 该复用功能设备的通道号}
+{Arduino 引脚编号, RT-Thread 引脚编号(通过 GET_PIN 宏获取), 复用功能的设备名(PWM、ADC 或 DAC), 该复用功能设备的通道号}
 ```
 
 其中，Arduino引脚编号，即是第一个参数，是必填的，D0 - Dx 或者是 A0 - Ax。**注意一定要按先数字引脚后模拟引脚照顺序来填写**。
 
-RT-Thread引脚编号，即第二个参数，rt_pin_write中引脚编号填什么，这里就填什么，一般使用 `GET_PIN` 宏来获取。注意：D0、D1以及I2C、SPI IO需要将此参数略过。
+RT-Thread 引脚编号，即第二个参数，rt_pin_write 中引脚编号填什么，这里就填什么，一般使用 `GET_PIN` 宏来获取。注意：D0、D1 以及I2C、SPI IO 需要将此参数略过。
 
-后两个参数是复用功能IO才需要填写的，普通引脚只需要略过即可。
+后两个参数是复用功能 IO 才需要填写的，普通引脚只需要略过即可。
 
-此外，如果板卡支持SPI，则需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901 。
+此外，如果板卡支持 SPI，则需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901 。
 
 ### 1.4 arduino_pinout.h 文件的编写
 
@@ -151,7 +151,7 @@ D0、A0等引脚的数字宏，该宏一定要按照先数字引脚后模拟引�
 
 ## 2 修改Kconfig文件
 
-Kconfig文件位于BSP的board文件夹下：
+Kconfig 文件位于 BSP 的 board 文件夹下：
 
 参考示例BSP：[STM32F401 Nucleo板Kconfig](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/board/Kconfig) | [STM32F411 Nucleo板Kconfig](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f411-st-nucleo/board/Kconfig) | [STM32L475 潘多拉板Kconfig](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32l475-atk-pandora/board/Kconfig)
 
@@ -196,7 +196,7 @@ menu "Onboard Peripheral Drivers"
 endmenu
 ```
 
-需要在`Onboard Peripheral Drivers`栏下增加 `BSP_USING_ARDUINO` 配置选项，并依赖相应的PWM、ADC、UART、I2C以及SPI等设备框架，满足一键化开启RTduino的能力。
+需要在 `Onboard Peripheral Drivers` 栏下增加 `BSP_USING_ARDUINO` 配置选项，并依赖相应的 PWM、ADC、UART、I2C 以及 SPI 等设备框架，满足一键化开启RTduino的能力。
 
 ## 3 编写Arduino引脚布局(pinout)的README说明文档
 
