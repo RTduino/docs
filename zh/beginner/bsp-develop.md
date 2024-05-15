@@ -124,8 +124,10 @@ Hardware Drivers Config --->
 
 ![pico-bootsel](./figures/bsp-develop/raspberry-pi-pico/pico-bootsel.png)
 
-将之前生成的 `rtthread-pico.uf2` 文件拖入该设备即可，Pico 将会自动重启。至此，你的 RTduino 程序就在板卡上运行起来了！
+将之前生成的 `rtthread-pico.uf2` 文件拖入该设备即可，Pico 将会自动重启。
 
 ![pico-boot-usb](./figures/bsp-develop/raspberry-pi-pico/pico-boot-usb.png)
+
+至此，你的 RTduino 程序就在板卡上运行起来了！
 
 <!-- tabs:end -->
