@@ -19,7 +19,7 @@ RTduino 功能依赖于如下 RT-Thread 设备框架和驱动的支持，对接�
 
 ## 2 创建文件夹和文件
 
-需要在某个BSP的applications文件夹下创建如下文件、文件夹：
+需要在某个 BSP 的 applications 文件夹下创建如下文件、文件夹：
 
 参考示例BSP：[STM32F401 Nucleo板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout) | [STM32F411 Nucleo板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout) | [STM32L475 潘多拉板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/applications)
 
@@ -118,10 +118,10 @@ const pin_map_t pin_map_table[]=
 如上截取展示了 IO 编号和功能映射表，每一行用花括号包裹（实际是一个结构体）来建议一个IO的映射关系：
 
 ```
-{Arduino 引脚编号, RT-Thread 引脚编号(通过 GET_PIN 宏获取), 复用功能的设备名(PWM、ADC 或 DAC), 该复用功能设备的通道号}
+{Arduino 引脚编号, RT-Thread 引脚编号（通过 GET_PIN 宏获取）, 复用功能的设备名（PWM、ADC 或 DAC）, 该复用功能设备的通道号}
 ```
 
-其中，Arduino引脚编号，即是第一个参数，是必填的，D0 - Dx 或者是 A0 - Ax。**注意一定要按先数字引脚后模拟引脚照顺序来填写**。
+其中，Arduino 引脚编号，即是第一个参数，是必填的，D0 - Dx 或者是 A0 - Ax。**注意一定要按先数字引脚后模拟引脚照顺序来填写**。
 
 RT-Thread 引脚编号，即第二个参数，rt_pin_write 中引脚编号填什么，这里就填什么，一般使用 `GET_PIN` 宏来获取。注意：D0、D1 以及I2C、SPI IO 需要将此参数略过。
 
@@ -212,7 +212,7 @@ menu "Onboard Peripheral Drivers"
         select BSP_USING_UART2
         default y
 
-    #增加 BSP_USING_ARDUINO 配置选项
+    # 增加 BSP_USING_ARDUINO 配置选项
     config BSP_USING_ARDUINO
         bool "Compatible with Arduino Ecosystem (RTduino)"
         select PKG_USING_RTDUINO
@@ -249,9 +249,9 @@ endmenu
 
 ## 4 编写Arduino引脚布局(pinout)的README说明文档
 
-示例：[STM32F401 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout/README.md) | [STM32F411 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout/README.md) | [STM32L475潘多拉的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32l475-atk-pandora/applications/arduino_pinout/README.md)
+示例：[STM32F401 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout/README.md) | [STM32F411 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout/README.md) | [STM32L475 潘多拉的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32l475-atk-pandora/applications/arduino_pinout/README.md)
 
-该文档需位于`applications/arduino_pinout/README.md`，主要介绍该BSP下的Arduino引脚编号和引脚功能，以及注意事项等。
+该文档需位于 `applications/arduino_pinout/README.md`，主要介绍该BSP下的Arduino引脚编号和引脚功能，以及注意事项等。
 
 ## 5 SPI 对接注意事项
 
