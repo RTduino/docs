@@ -2,23 +2,74 @@
 
 **本章介绍采用纯手工方式**将 RT-Thread BSP 适配到 RTduino。目前，部分 RT-Thread BSP 已经支持自动化辅助工具pinout-generator来生成对接模板，方便用户快速对接，详情参考[pinout-generator工具](/zh/manual/adapt/bsp/pinout-generator/pinout-generator.md)章节。
 
-## 1 创建文件夹和文件
+## 1 确认BSP驱动已经适配
+
+RTduino 功能依赖于如下 RT-Thread 设备框架和驱动的支持，对接前需要确认对应 RTduino 功能的 BSP 驱动是否已经完成适配。
+
+| RTduino功能             | RT-Thread BSP驱动  |
+| --------------------- | ---------------- |
+| ditigalRead / Write() | PIN驱动            |
+| analogWrite()         | PWM驱动            |
+| analogRead()          | ADC驱动            |
+| Serial                | 串口驱动             |
+| Wire                  | I2C驱动            |
+| SPI                   | SPI驱动            |
+| Tone / noTone()       | 硬件定时器(hwtimer)驱动 |
+| Servo                 | PWM驱动            |
+
+## 2 创建文件夹和文件
 
 需要在某个BSP的applications文件夹下创建如下文件、文件夹：
 
 参考示例BSP：[STM32F401 Nucleo板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout) | [STM32F411 Nucleo板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout) | [STM32L475 潘多拉板applications文件夹](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/applications)
 
-### 1.1 arduino_main.cpp文件
+### 2.1 arduino_main.cpp文件
 
-该文件是 Arduino 的编程入口，提供 setup 和 loop 函数。在 loop 函数默认以 200ms 为周期，闪烁 Arduino 内建 LED 灯（LED_BUILTIN）。如果 LED_BUILTIN 被 RT-Thread 默认主线程的 LED 闪烁示例占用，可以在 loop 函数内以 `Serial.println("Hello Arduino\n");` 代替频闪 LED（例如[STM32F401 Nucleo板](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/main.c)）。
+该文件是 Arduino 的编程入口，提供 setup 和 loop 函数。在 loop 函数默认以 200ms 为周期，闪烁 Arduino 内建 LED 灯（LED_BUILTIN）。如例：
 
-### 1.2 arduino_pinout文件夹
+```c
+#include <Arduino.h>
+
+void setup(void)
+{
+    /* put your setup code here, to run once: */
+    Serial.begin();
+    Serial.println("Hello RTduino!");
+}
+
+void loop(void)
+{
+    /* put your main code here, to run repeatedly: */
+    delay(1000);
+}
+```
+
+如果 LED_BUILTIN 被 RT-Thread 默认主线程的 LED 闪烁示例占用，可以在 loop 函数内以 `Serial.println("Hello Arduino\n");` 代替频闪 LED。如例：
+
+```c
+#include <Arduino.h>
+
+void setup(void)
+{
+    /* put your setup code here, to run once: */
+    Serial.begin();
+    Serial.println("Hello RTduino!");
+}
+
+void loop(void)
+{
+    /* put your main code here, to run repeatedly: */
+    delay(1000);
+}
+```
+
+### 2.2 arduino_pinout文件夹
 
 需要在applications文件夹下创建arduino_pinout文件夹，这个文件夹主要包含 `arduino_pinout.c` 和 `arduino_pinout.h` 两个关键的文件，这两个文件是对接的关键。用户只需要做好这两个文件，即可完成与RTduino的对接。
 
 同时，这个文件夹内也需要SConscript脚本文件，以及提供Arduino引脚布局的README说明文档。请参照上面的示例BSP来完成对这两个文件的编写。
 
-### 1.3 arduino_pinout.c 文件的编写
+### 2.3 arduino_pinout.c 文件的编写
 
 `arduino_pinout.c` 内需要完成一个IO编号和功能的映射表。由于Arduino的习惯是采用1-13 (D0-D13) 以及 A0-A5的引脚编号，而正规的MCU的引脚编号一般都是PA1之类，因此需要将MCU真正的引脚编号与Arduino引脚编号映射起来。
 
@@ -76,9 +127,7 @@ RT-Thread 引脚编号，即第二个参数，rt_pin_write 中引脚编号填什
 
 后两个参数是复用功能 IO 才需要填写的，普通引脚只需要略过即可。
 
-此外，如果板卡支持 SPI，则需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901 。
-
-### 1.4 arduino_pinout.h 文件的编写
+### 2.4 arduino_pinout.h 文件的编写
 
 该文件主要负责定义各种宏，包括：
 
@@ -149,7 +198,7 @@ D0、A0等引脚的数字宏，该宏一定要按照先数字引脚后模拟引�
 #define RTDUINO_SERIAL2_DEVICE_NAME          "uart3"
 ```
 
-## 2 修改Kconfig文件
+## 3 修改Kconfig文件
 
 Kconfig 文件位于 BSP 的 board 文件夹下：
 
@@ -198,8 +247,16 @@ endmenu
 
 需要在 `Onboard Peripheral Drivers` 栏下增加 `BSP_USING_ARDUINO` 配置选项，并依赖相应的 PWM、ADC、UART、I2C 以及 SPI 等设备框架，满足一键化开启RTduino的能力。
 
-## 3 编写Arduino引脚布局(pinout)的README说明文档
+## 4 编写Arduino引脚布局(pinout)的README说明文档
 
 示例：[STM32F401 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f401-st-nucleo/applications/arduino_pinout/README.md) | [STM32F411 Nucleo的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f411-st-nucleo/applications/arduino_pinout/README.md) | [STM32L475潘多拉的Arduino引脚布局说明文档](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32l475-atk-pandora/applications/arduino_pinout/README.md)
 
 该文档需位于`applications/arduino_pinout/README.md`，主要介绍该BSP下的Arduino引脚编号和引脚功能，以及注意事项等。
+
+## 5 SPI 对接注意事项
+
+SPI 功能对于板卡来说是非必须功能，如果板卡支持，则尽量对接。
+
+SPI的功能属性不是默认IO模式，即若SPI引脚与部分PWM和通用IO功能冲突，PWM或者通用IO才是板卡上电之后的默认IO模式，用户调用 `SPI.begin()` 时，会将SPI端口**永久不可逆地**转换为 SPI-MOSI、SPI-MISO、SPI-CLK。
+
+SPI不使用硬件片选，由Arduino应用程序自己进行软件片选操作，因此适配仅需关心SPI-MOSI、SPI-MISO 和 SPI-CLK三个引脚。SPI-CS这个引脚就是一个正常的通用IO，通过 `digitalWrite()` 函数在 Arduino 应用程序中自行操作。适配时，需要在 `pins_arduino.c` 文件中实现 `switchToSPI()` 函数，详见PR：https://github.com/RT-Thread/rt-thread/pull/7901。
